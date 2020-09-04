@@ -4,12 +4,6 @@ console.log('ENV = ' + process.env.FIREBASE_API_KEY);
 /*  note:  the rest of this copied from firebase.google.com (Project Overview -> register app to web) */
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    // apiKey: "AIzaSyB1hrE94ss0obExP_T7untmelr0fEGiml8",
-    // authDomain: "movies-71479.firebaseapp.com",
-    // databaseURL: "https://movies-71479.firebaseio.com",
-    // projectId: "movies-71479",
-    // storageBucket: "movies-71479.appspot.com",
-    // messagingSenderId: "532355809481"
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
     databaseURL: process.env.FIREBASE_DATABASE_URL,
