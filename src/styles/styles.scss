@@ -1,5 +1,6 @@
 @import './base/settings'; 
 @import './base/base';   // for partial _base.scss, leave off underscore & .scss which leaves just 'base' 
+@import './components/banner'; 
 @import './components/box-layout'; 
 @import './components/button'; 
 @import './components/content-container'; 

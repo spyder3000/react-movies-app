@@ -17,3 +17,10 @@
 .button--secondary {       /* modifier overwrites the styling from .button above */
     background-color: #888; 
 }
+
+.button--inactive {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    background-color: $light-grey; 
+}

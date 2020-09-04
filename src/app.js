@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';  // Provider allows us to provide the Store to all the components in our application
 import AppRouter, { history } from './routers/AppRouter'; 
 import configureStore from './store/configureStore'; 
+import {startSetMovies} from './actions/movies'; 
+import {setSamples} from './actions/samples'; 
 import { login, logout } from './actions/auth'; 
 import 'normalize.css/normalize.css';   // found in node_modules folder
 import './styles/styles.scss'; 
@@ -29,6 +31,7 @@ const renderApp = () => {
 
 // Add a "Loading" message while we're waiting on the data from Firebase 
 ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+store.dispatch(setSamples());  
 
 // firebase method that runs a callback when Auth state is changed 
 firebase.auth().onAuthStateChanged((user) => {
@@ -36,11 +39,13 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     //console.log('log in - ', user.uid); 
     store.dispatch(login(user.uid)); 
-    renderApp();   
-    // only redirect if we're on login page;  e.g. won't redirect to dashboard if you refresh from Edit page 
-    if (history.location.pathname === '/') {    // history.location gives current URL
-      history.push('/dashboard'); 
-    }
+    store.dispatch(startSetMovies()).then(() => {
+      renderApp();   
+      // only redirect if we're on login page;  e.g. won't redirect to dashboard if you refresh from Edit page 
+      if (history.location.pathname === '/') {    // history.location gives current URL
+        history.push('/dashboard'); 
+      }
+    })
   } else {
     // console.log('log out'); 
     store.dispatch(logout()); 

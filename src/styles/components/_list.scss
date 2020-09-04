@@ -44,14 +44,36 @@
     }
 }
 
+.list-item__year {
+    font-size: $font-size-small; 
+    color: $grey; 
+    padding-right: $m-size; 
+}
+
 .list-item__title {
     margin: 0; 
     word-break: break-all;   // will break up super long words that would run off the edge of our screen;  
+    text-decoration: none;  
+}
+
+.list-item__link {
+    text-decoration: none;  
 }
 
 .list-item__sub-title {
     color: $grey; 
     font-size: $font-size-small;  
+}
+
+.list-item__rating {
+    padding-right: $m-size; 
+    display: inline;
+}
+
+.list-item__button {
+    margin-right: $s-size;
+    padding: 0.5rem; 
+    font-size: $font-size-medium; 
 }
 
 .list-item__data {
