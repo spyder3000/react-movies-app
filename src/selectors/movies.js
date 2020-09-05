@@ -7,15 +7,12 @@ export default (movies, {text, year, sortBy  }) => {  // 1st param is array of m
         return yearMatch && textMatch;  
     }).sort((a, b) => {
         if (sortBy === 'title') {        // put titles in alphabetical order;  1 means b comes first;  -1 means a comes first 
-            console.log('title -- a.title = ' + a.title + '; b.title = ' + b.title + '; ' + (a.title < b.title) ); 
             return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1 
         }
         if (sortBy === 'year') {      // put largest year first;  1 means b comes first;  -1 means a comes first
-            console.log('year -- a.year = ' + a.year + '; b.year = ' + b.year); 
             return a.year < b.year ? 1 : -1 
         }
         if (sortBy === 'rating') {      // put largest rating first;  1 means b comes first;  -1 means a comes first
-            console.log('rating -- a.rating = ' + a.rating + '; b.rating = ' + b.rating); 
             return a.rating < b.rating ? 1 : -1 
         }        
     })

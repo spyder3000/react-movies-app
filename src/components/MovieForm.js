@@ -72,7 +72,7 @@ export default class MovieForm extends React.Component {
                 recap_link: mod_link1, 
                 reviews_link: mod_link2
             }))
-            console.log('w = ' + mod_link1); 
+            // console.log('w = ' + mod_link1); 
             this.props.onSubmit({
                 title: this.state.title, 
                 year: this.state.year,     

@@ -5,7 +5,7 @@ import { startEditMovie, startRemoveMovie } from '../actions/movies';
 
 export class EditMoviePage extends React.Component {
     onSubmit= (movie) => {
-        console.log(movie); 
+        // console.log(movie); 
         // this.props.dispatch(startEditMovie(this.props.movie.id, movie));  // params - id & object w/ description, note, amount, createdAt
         this.props.startEditMovie(this.props.movie.id, movie);  // replaces above line by removing dispatch which is in mapDispatchToProps below
         this.props.history.push('/');   // switch to Dashboard page;  from Chrome, click 'Components' then 'AddMoviePage' to see history object

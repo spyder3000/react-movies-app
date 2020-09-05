@@ -17,7 +17,7 @@ export const MovieList = (props) => (     // set to export to test in ExpenseLis
                 </div>
             ) : (
                 props.movies.map((movie) => {
-                    return <MovieListItem key={movie.id} {...movie} />   /* ...movie allows for destructuring in MovieListItem */
+                    return <MovieListItem key={movie.id} {...movie} jvsample={props.jvsample} />   /* ...movie allows for destructuring in MovieListItem */
                     //return <span> 0 </span>
                 },
                 <span>Movie List coming soon </span> 

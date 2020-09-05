@@ -6,7 +6,7 @@ import { startAddMovie } from '../actions/movies';
 // ch 124 - convert to class-based component 
 export class AddMoviePage extends React.Component {
     onSubmit= (movie) => {
-        console.log(movie); 
+        // console.log(movie); 
     //    // props.dispatch(addMovie(movie));  // action creator that expects object w/ title, year, rating, recap_link, review_link
         this.props.startAddMovie(movie);  // replaces above line w/ this & mapDispatchToProps below
         this.props.history.push('/');   // switch to Dashboard page;  from Chrome, click 'Components' then 'AddMoviePage' to see history object

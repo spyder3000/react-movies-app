@@ -1,7 +1,6 @@
 import React from 'react';   // using ES6 syntax for React;  
 
 const StarRating = (props) => {
-    console.log('jv = ' + props.rating); 
     if (props.rating == 5) {
         return ( <div className="list-item__rating"><span className="fa fa-star"></span><span className="fa fa-star"></span>
             <span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></div> )

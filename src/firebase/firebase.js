@@ -1,6 +1,5 @@
 // where we will connect to the database;  note: earlier notes saved to 152_firebase.js & removed here  
 import * as firebase from 'firebase';  // * as takes all named exports from firebase & dumps into var 'firebase' (this is recommended by fb) 
-console.log('ENV = ' + process.env.FIREBASE_API_KEY); 
 /*  note:  the rest of this copied from firebase.google.com (Project Overview -> register app to web) */
 // Your web app's Firebase configuration
 var firebaseConfig = {

@@ -8,23 +8,17 @@ export class MovieListFilters extends React.Component {
     //   calendarFocused: null   
     // };
     onYearChange = (e) => {
-        console.log('onYearChange'); 
         this.props.setYearFilter(e.target.value);
     };
     onTextChange = (e) => {
-        console.log('onTextChange'); 
         this.props.setTextFilter(e.target.value);
     };
     onSortChange = (e) => {     // modify to Year, Rating, Title
-        console.log('onSortChange'); 
         if (e.target.value === 'title') {
-            console.log('sortByTitle')
             this.props.sortByTitle();
         } else if (e.target.value === 'year') {
-            console.log('sortByYear')
             this.props.sortByYear();
         } else if (e.target.value === 'rating') {
-            console.log('sortByRating')
             this.props.sortByRating();
         }
     };
@@ -86,7 +80,6 @@ export class MovieListFilters extends React.Component {
   };
 
   const mapStateToProps = (state) => {
-    console.log('state = ' + JSON.stringify(state)); 
       return ({
         filters: state.filters
     //filters: { text: '', year: '2020', sortBy: 'year'}
